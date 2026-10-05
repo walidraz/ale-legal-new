@@ -1,0 +1,15 @@
+# Static legal pages for the ALE app. No build step: Netlify serves this folder as is.
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
